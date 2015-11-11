@@ -1,0 +1,14 @@
+{
+  "name": "language-riot-tag",
+  "version": "0.1.0",
+  "description": "Atom Syntax highlighting for Riot.js tag components",
+  "keywords": [
+  ],
+  "repository": "https://github.com/dekimasoon/language-riot-tag",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
