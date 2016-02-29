@@ -1,7 +1,28 @@
 scopeName: 'text.html.riot'
-name: 'HTML (Riot Tag)'
-fileTypes: [ 'tag' ]
+name: 'HTML (Riot tag)'
+fileTypes: [ 'tag', 'tag.html' ]
 patterns: [
+
+  # HTML -------------------------------
+  {
+    name: 'meta.tag.any.html'
+    begin: '(</?)([a-zA-Z_-]+)'
+    beginCaptures:
+      '1':
+        name: 'punctuation.definition.tag.begin.html'
+      '2':
+        name: 'entity.name.tag.any.html'
+    end: '>'
+    endCaptures:
+      '0':
+        name: 'punctuation.definition.tag.end.html'
+    patterns: [
+      { 'include': '#riotExpressions' }
+      { 'include': '#tagStuff' }
+    ]
+  }
+  # ------------------------------- HTML
+
 
   # Script -----------------------------
   # Coffee
@@ -148,12 +169,22 @@ patterns: [
   # ------------------------------ Style
 
   # include ----------------------------
-  { include: 'text.html.basic' }  # - for html tag
-  # { 'include': 'source.js' }        # - for scripts on the outside <script></script>
+  { include: 'text.html.basic' }
   # ------------------------------------
 ]
 
 repository:
+
+  riotExpressions:
+    name: 'string.quoted.other.riot'
+    begin: '\\{'
+    beginCaptures:
+      '0':
+        name: 'punctuation.definition.block.begin.riot'
+    end: '\\}'
+    endCaptures:
+      '0':
+        name: 'punctuation.definition.block.end.riot'
 
   stringDoubleQuoted:
     name: 'string.quoted.double.html'
@@ -179,12 +210,11 @@ repository:
 
   tagGenericAttribute:
     name: 'entity.other.attribute-name.html'
-    match: '\\b([a-zA-Z\\-:]+)'
+    match: '\\b([a-zA-Z-]+)'
 
   tagIdAttribute:
     name: 'meta.attribute-with-value.id.html'
-    begin: '\\b(id)\\b\\s*(=)'
-    end: '(?:\'|")'
+    match: '\\b(id)(=)["|\'][a-zA-Z0-9-_]*["|\']'
     captures:
       '1':
         name: 'entity.other.attribute-name.id.html'
