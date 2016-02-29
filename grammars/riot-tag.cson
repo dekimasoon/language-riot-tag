@@ -1,28 +1,28 @@
-'scopeName': 'text.html.riot'
-'name': 'HTML (Riot Tag)'
-'fileTypes': [ 'tag' ]
-'patterns': [
+scopeName: 'text.html.riot'
+name: 'HTML (Riot Tag)'
+fileTypes: [ 'tag' ]
+patterns: [
 
   # Script -----------------------------
   # Coffee
   {
-    'contentName': 'source.coffee.embedded.html'
-    'begin': '(?:^\\s+)?(<)(script)\\b(?=[^>]*type="(?:text/)?coffee")'
-    'end': '(</)(script)(>)(?:\\s*\\n)?'
-    'captures':
+    contentName: 'source.coffee.embedded.html'
+    begin: '(?:^\\s+)?(<)(script)\\b(?=[^>]*type="(?:text/)?coffee")'
+    end: '(</)(script)(>)(?:\\s*\\n)?'
+    captures:
       '1':
-        'name': 'punctuation.definition.tag.begin.html'
+        name: 'punctuation.definition.tag.begin.html'
       '2':
-        'name': 'entity.name.tag.script.html'
+        name: 'entity.name.tag.script.html'
       '3':
-        'name': 'punctuation.definition.tag.end.html'
-    'patterns': [
-      { 'include': '#tag-stuff' }
+        name: 'punctuation.definition.tag.end.html'
+    patterns: [
+      { include: '#tagStuff' }
       {
-        'begin': '(>)'
-        'end': '(?=</script)'
-        'patterns': [
-          { 'include': 'source.coffee' }
+        begin: '(>)'
+        end: '(?=</script)'
+        patterns: [
+          { include: 'source.coffee' }
         ]
       }
     ]
@@ -32,115 +32,115 @@
   # Style ------------------------------
   # Pure CSS
   {
-    'contentName': 'source.css.embedded.html'
-    'begin': '(?:^\\s+)?(<)(style)\\b(?![^>]*(?:(?:/>)|(?:type="(?:text/)?(?:stylus|sass|scss|less)")))'
-    'end': '(</)(style)(>)(?:\\s*\\n)?'
-    'captures':
+    contentName: 'source.css.embedded.html'
+    begin: '(?:^\\s+)?(<)(style)\\b(?![^>]*(?:(?:/>)|(?:type="(?:text/)?(?:stylus|sass|scss|less)")))'
+    end: '(</)(style)(>)(?:\\s*\\n)?'
+    captures:
       '1':
-        'name': 'punctuation.definition.tag.begin.html'
+        name: 'punctuation.definition.tag.begin.html'
       '2':
-        'name': 'entity.name.tag.style.html'
+        name: 'entity.name.tag.style.html'
       '3':
-        'name': 'punctuation.definition.tag.end.html'
-    'patterns': [
-      { 'include': '#tag-stuff' }
+        name: 'punctuation.definition.tag.end.html'
+    patterns: [
+      { include: '#tagStuff' }
       {
-        'begin': '(>)'
-        'end': '(?=</style)'
-        'patterns': [
-          { 'include': 'source.css' }
+        begin: '(>)'
+        end: '(?=</style)'
+        patterns: [
+          { include: 'source.css' }
         ]
       }
     ]
   }
   # Stylus
   {
-    'contentName': 'source.stylus.embedded.html'
-    'begin': '(?:^\\s+)?(<)(style)\\b(?=[^>]*type="(?:text/)?stylus")'
-    'end': '(</)(style)(>)(?:\\s*\\n)?'
-    'captures':
+    contentName: 'source.stylus.embedded.html'
+    begin: '(?:^\\s+)?(<)(style)\\b(?=[^>]*type="(?:text/)?stylus")'
+    end: '(</)(style)(>)(?:\\s*\\n)?'
+    captures:
       '1':
-        'name': 'punctuation.definition.tag.begin.html'
+        name: 'punctuation.definition.tag.begin.html'
       '2':
-        'name': 'entity.name.tag.style.html'
+        name: 'entity.name.tag.style.html'
       '3':
-        'name': 'punctuation.definition.tag.end.html'
-    'patterns': [
-      { 'include': '#tag-stuff' }
+        name: 'punctuation.definition.tag.end.html'
+    patterns: [
+      { include: '#tagStuff' }
       {
-        'begin': '(>)'
-        'end': '(?=</style)'
-        'patterns': [
-          { 'include': 'source.stylus' }
+        begin: '(>)'
+        end: '(?=</style)'
+        patterns: [
+          { include: 'source.stylus' }
         ]
       }
     ]
   }
   # Sass
   {
-    'contentName': 'source.sass.embedded.html'
-    'begin': '(?:^\\s+)?(<)(style)\\b(?=[^>]*type="(?:text/)?sass")'
-    'end': '(</)(style)(>)(?:\\s*\\n)?'
-    'captures':
+    contentName: 'source.sass.embedded.html'
+    begin: '(?:^\\s+)?(<)(style)\\b(?=[^>]*type="(?:text/)?sass")'
+    end: '(</)(style)(>)(?:\\s*\\n)?'
+    captures:
       '1':
-        'name': 'punctuation.definition.tag.begin.html'
+        name: 'punctuation.definition.tag.begin.html'
       '2':
-        'name': 'entity.name.tag.style.html'
+        name: 'entity.name.tag.style.html'
       '3':
-        'name': 'punctuation.definition.tag.end.html'
-    'patterns': [
-      { 'include': '#tag-stuff' }
+        name: 'punctuation.definition.tag.end.html'
+    patterns: [
+      { include: '#tagStuff' }
       {
-        'begin': '(>)'
-        'end': '(?=</style)'
-        'patterns': [
-          { 'include': 'source.sass' }
+        begin: '(>)'
+        end: '(?=</style)'
+        patterns: [
+          { include: 'source.sass' }
         ]
       }
     ]
   }
   # Scss
   {
-    'contentName': 'source.css.scss.embedded.html'
-    'begin': '(?:^\\s+)?(<)(style)\\b(?=[^>]*type="(?:text/)?scss")'
-    'end': '(</)(style)(>)(?:\\s*\\n)?'
-    'captures':
+    contentName: 'source.css.scss.embedded.html'
+    begin: '(?:^\\s+)?(<)(style)\\b(?=[^>]*type="(?:text/)?scss")'
+    end: '(</)(style)(>)(?:\\s*\\n)?'
+    captures:
       '1':
-        'name': 'punctuation.definition.tag.begin.html'
+        name: 'punctuation.definition.tag.begin.html'
       '2':
-        'name': 'entity.name.tag.style.html'
+        name: 'entity.name.tag.style.html'
       '3':
-        'name': 'punctuation.definition.tag.end.html'
-    'patterns': [
-      { 'include': '#tag-stuff' }
+        name: 'punctuation.definition.tag.end.html'
+    patterns: [
+      { include: '#tagStuff' }
       {
-        'begin': '(>)'
-        'end': '(?=</style)'
-        'patterns': [
-          { 'include': 'source.css.scss' }
+        begin: '(>)'
+        end: '(?=</style)'
+        patterns: [
+          { include: 'source.css.scss' }
         ]
       }
     ]
   }
   # Less
   {
-    'contentName': 'source.css.less.embedded.html'
-    'begin': '(?:^\\s+)?(<)(style)\\b(?=[^>]*type="(?:text/)?less")'
-    'end': '(</)(style)(>)(?:\\s*\\n)?'
-    'captures':
+    contentName: 'source.css.less.embedded.html'
+    begin: '(?:^\\s+)?(<)(style)\\b(?=[^>]*type="(?:text/)?less")'
+    end: '(</)(style)(>)(?:\\s*\\n)?'
+    captures:
       '1':
-        'name': 'punctuation.definition.tag.begin.html'
+        name: 'punctuation.definition.tag.begin.html'
       '2':
-        'name': 'entity.name.tag.style.html'
+        name: 'entity.name.tag.style.html'
       '3':
-        'name': 'punctuation.definition.tag.end.html'
-    'patterns': [
-      { 'include': '#tag-stuff' }
+        name: 'punctuation.definition.tag.end.html'
+    patterns: [
+      { include: '#tagStuff' }
       {
-        'begin': '(>)'
-        'end': '(?=</style)'
-        'patterns': [
-          { 'include': 'source.css.less' }
+        begin: '(>)'
+        end: '(?=</style)'
+        patterns: [
+          { include: 'source.css.less' }
         ]
       }
     ]
@@ -148,79 +148,79 @@
   # ------------------------------ Style
 
   # include ----------------------------
-  { 'include': 'text.html.basic' }  # - for html tag
+  { include: 'text.html.basic' }  # - for html tag
   # { 'include': 'source.js' }        # - for scripts on the outside <script></script>
   # ------------------------------------
 ]
 
-'repository':
+repository:
 
-  'string-double-quoted':
-    'name': 'string.quoted.double.html'
-    'begin': '"'
-    'beginCaptures':
+  stringDoubleQuoted:
+    name: 'string.quoted.double.html'
+    begin: '"'
+    beginCaptures:
       '0':
-        'name': 'punctuation.definition.string.begin.html'
-    'end': '"'
-    'endCaptures':
+        name: 'punctuation.definition.string.begin.html'
+    end: '"'
+    endCaptures:
       '0':
-        'name': 'punctuation.definition.string.end.html'
+        name: 'punctuation.definition.string.end.html'
 
-  'string-single-quoted':
-    'name': 'string.quoted.single.html'
-    'begin': '\''
-    'beginCaptures':
+  stringSingleQuoted:
+    name: 'string.quoted.single.html'
+    begin: '\''
+    beginCaptures:
       '0':
-        'name': 'punctuation.definition.string.begin.html'
-    'end': '\''
-    'endCaptures':
+        name: 'punctuation.definition.string.begin.html'
+    end: '\''
+    endCaptures:
       '0':
-        'name': 'punctuation.definition.string.end.html'
+        name: 'punctuation.definition.string.end.html'
 
-  'tag-generic-attribute':
-    'name': 'entity.other.attribute-name.html'
-    'match': '\\b([a-zA-Z\\-:]+)'
+  tagGenericAttribute:
+    name: 'entity.other.attribute-name.html'
+    match: '\\b([a-zA-Z\\-:]+)'
 
-  'tag-id-attribute:':
-    'name': 'meta.attribute-with-value.id.html'
-    'begin': '\\b(id)\\b\\s*(=)'
-    'end': '(?:\'|")'
-    'captures':
+  tagIdAttribute:
+    name: 'meta.attribute-with-value.id.html'
+    begin: '\\b(id)\\b\\s*(=)'
+    end: '(?:\'|")'
+    captures:
       '1':
-        'name: entity.other.attribute-name.id.html'
+        name: 'entity.other.attribute-name.id.html'
       '2':
-        'name= punctuation.separator.key-value.html'
-    'patterns': [
+        name: 'punctuation.separator.key-value.html'
+    patterns: [
       {
-        'name': 'string.quoted.double.html'
-        'contentName': 'meta.toc-list.id.html'
-        'begin': '"'
-        'beginCaptures':
+        name: 'string.quoted.double.html'
+        contentName: 'meta.toc-list.id.html'
+        begin: '"'
+        beginCaptures:
           '0':
-            'name': 'punctuation.definition.string.begin.html'
-        'end': '"'
-        'endCaptures':
+            name: 'punctuation.definition.string.begin.html'
+        end: '"'
+        endCaptures:
           '0':
-            'name': 'punctuation.definition.string.end.html'
+            name: 'punctuation.definition.string.end.html'
       }
       {
-        'name': 'string.quoted.single.html'
-        'contentName': 'meta.toc-list.id.html'
-        'begin': '\''
-        'beginCaptures':
+        name: 'string.quoted.single.html'
+        contentName: 'meta.toc-list.id.html'
+        begin: '\''
+        beginCaptures:
           '0':
-            'name': 'punctuation.definition.string.begin.html'
-        'end': '\''
-        'endCaptures':
+            name: 'punctuation.definition.string.begin.html'
+        end: '\''
+        endCaptures:
           '0':
-            'name': 'punctuation.definition.string.end.html'
+            name: 'punctuation.definition.string.end.html'
       }
     ]
 
-  'tag-stuff':
-    'patterns': [
-      { 'include': '#tag-id-attribute' }
-      { 'include': '#tag-generic-attribute' }
-      { 'include': '#string-double-quoted' }
-      { 'include': '#string-single-quoted' }
+  tagStuff:
+    patterns: [
+      { include: '#tagIdAttribute' }
+      { include: '#tagGenericAttribute' }
+      { include: '#stringDoubleQuoted' }
+      { include: '#stringSingleQuoted' }
     ]
