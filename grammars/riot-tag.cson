@@ -6,7 +6,7 @@ patterns: [
   # HTML -------------------------------
   {
     name: 'meta.tag.any.html'
-    begin: '(</?)([a-zA-Z_-]+)'
+    begin: '(</?)([a-zA-Z0-9_-]+)'
     beginCaptures:
       '1':
         name: 'punctuation.definition.tag.begin.html'
