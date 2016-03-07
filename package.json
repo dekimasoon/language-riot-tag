@@ -1,6 +1,6 @@
 {
   "name": "language-riot-tag",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Atom Syntax highlighting for Riot.js tag components",
   "keywords": [],
   "repository": "https://github.com/dekimasoon/language-riot-tag",
