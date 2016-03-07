@@ -6,7 +6,7 @@ patterns: [
   # HTML -------------------------------
   {
     name: 'meta.tag.any.html'
-    begin: '(</?)([a-zA-Z_-]+)'
+    begin: '(</?)([a-zA-Z0-9_-]+)'
     beginCaptures:
       '1':
         name: 'punctuation.definition.tag.begin.html'
@@ -176,7 +176,7 @@ patterns: [
 repository:
 
   riotExpressions:
-    name: 'string.quoted.other.riot'
+    name: 'meta.string.expression.riot'
     begin: '\\{'
     beginCaptures:
       '0':
@@ -185,6 +185,7 @@ repository:
     endCaptures:
       '0':
         name: 'punctuation.definition.block.end.riot'
+    contentName: 'source.js'
 
   stringDoubleQuoted:
     name: 'string.quoted.double.html'
@@ -214,12 +215,13 @@ repository:
 
   tagIdAttribute:
     name: 'meta.attribute-with-value.id.html'
-    match: '\\b(id)(=)["|\'][a-zA-Z0-9-_]*["|\']'
+    begin: '\\b(id)\\b\\s*(=)'
     captures:
       '1':
         name: 'entity.other.attribute-name.id.html'
       '2':
         name: 'punctuation.separator.key-value.html'
+    end: '(?<=\'|")|(?=\\s|>)'
     patterns: [
       {
         name: 'string.quoted.double.html'

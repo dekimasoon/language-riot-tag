@@ -7,6 +7,15 @@ Atom Syntax highlight for [Riot.js](http://riotjs.com/) `.tag` components.
 - Via Atom Editor: search for `riot-tag`
 - Console: `apm install language-riot-tag`
 
+## Emmet
+
+- For Emmet compatibility, add the following to your `keymap.cson` file.
+
+```
+'atom-text-editor[data-grammar="text html riot"]:not([mini])':
+    'tab': 'emmet:expand-abbreviation-with-tab'
+```
+
 ## Note
 
 - You've got to put your JS / es6 / coffee scripts inside `<script></script>` tag to get syntax highlights.
