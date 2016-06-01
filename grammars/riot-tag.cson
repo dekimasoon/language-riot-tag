@@ -92,7 +92,7 @@ patterns: [
         begin: '(>)'
         end: '(?=</style)'
         patterns: [
-          { include: 'source.stylus' }
+          { include: 'source.css.stylus' }
         ]
       }
     ]
